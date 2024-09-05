@@ -145,7 +145,7 @@
             cursor: pointer;
         }
 
-        .formulario-contato {
+        .formulario-contato, .formulario-login, .formulario-cadastro {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -154,7 +154,10 @@
             margin: 0 auto;
         }
 
-        .formulario-contato input {
+        .formulario-contato input,
+        .formulario-contato textarea,
+        .formulario-login input,
+        .formulario-cadastro input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -163,7 +166,9 @@
             box-sizing: border-box;
         }
 
-        .formulario-contato button {
+        .formulario-contato button,
+        .formulario-login button,
+        .formulario-cadastro button {
             background-color: #ff69b4;
             color: white;
             padding: 10px;
@@ -173,10 +178,11 @@
             width: 100%;
         }
 
-        .formulario-contato button:hover {
+        .formulario-contato button:hover,
+        .formulario-login button:hover,
+        .formulario-cadastro button:hover {
             background-color: #ff1493;
         }
-
     </style>
 </head>
 <body>
@@ -194,8 +200,8 @@
                 </ul>
             </nav>
             <div class="auth-buttons">
-                <button class="login">Login</button>
-                <button class="signup">Cadastrar</button>
+                <button class="login" id="loginLink">Login</button>
+                <button class="signup" id="signupLink">Cadastrar</button>
             </div>
         </div>
     </header>
@@ -206,38 +212,101 @@
         </div>
     </section>
 
+    <!-- Contact Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-content">
             <span class="close" id="contactClose">&times;</span>
             <h2>Contato</h2>
             <div class="formulario-contato">
                 <form action="mailto:contato@beautylink.com.br" method="post" enctype="text/plain">
-                     <input type="text" name="nome" placeholder="Nome" required>
-                     <input type="email" name="email" placeholder="Email" required>
-                     <input type="cidade" name="cidade" placeholder="Cidade" required>
-                     <textarea name="mensagem" placeholder="Mensagem" required></textarea>
+                    <input type="text" name="nome" placeholder="Nome" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="cidade" name="cidade" placeholder="Cidade" required>
+                    <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
                     <button type="submit">Enviar</button>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="loginClose">&times;</span>
+            <h2>Login</h2>
+            <div class="formulario-login">
+                <form action="#" method="post">
+                    <input type="text" name="username" placeholder="Usuário" required>
+                    <input type="password" name="password" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="signupClose">&times;</span>
+            <h2>Cadastrar</h2>
+            <div class="formulario-cadastro">
+                <form action="#" method="post">
+                    <input type="text" name="nome" placeholder="Nome Completo" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="password" name="senha" placeholder="Senha" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Modals
         var contactModal = document.getElementById("contactModal");
+        var loginModal = document.getElementById("loginModal");
+        var signupModal = document.getElementById("signupModal");
+
         var contactLink = document.getElementById("contactLink");
+        var loginLink = document.getElementById("loginLink");
+        var signupLink = document.getElementById("signupLink");
+
         var contactClose = document.getElementById("contactClose");
+        var loginClose = document.getElementById("loginClose");
+        var signupClose = document.getElementById("signupClose");
 
         contactLink.onclick = function() {
             contactModal.style.display = "block";
+        }
+
+        loginLink.onclick = function() {
+            loginModal.style.display = "block";
+        }
+
+        signupLink.onclick = function() {
+            signupModal.style.display = "block";
         }
 
         contactClose.onclick = function() {
             contactModal.style.display = "none";
         }
 
+        loginClose.onclick = function() {
+            loginModal.style.display = "none";
+        }
+
+        signupClose.onclick = function() {
+            signupModal.style.display = "none";
+        }
+
         window.onclick = function(event) {
             if (event.target == contactModal) {
                 contactModal.style.display = "none";
+            }
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+            if (event.target == signupModal) {
+                signupModal.style.display = "none";
             }
         }
     </script>
