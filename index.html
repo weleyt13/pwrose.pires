@@ -211,6 +211,217 @@
             <h1>CONECTE-SE COM SUA ESTÉTICA</h1>
         </div>
     </section>
+    <!DOCTYPE html>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra Centralizada</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-image: url('https://via.placeholder.com/1200x800');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .info-bar, .product-bar {
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10px;
+            z-index: 2;
+        }
+
+        .info-image, .info-text, .product-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .info-image img, .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .info-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .info-text p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .info-text button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 3;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="info-bar">
+            <div class="info-image">
+                <img src="https://via.placeholder.com/400" alt="Imagem Informativa">
+            </div>
+            <div class="info-text">
+                <h2>Conecte-se com Sua Estética</h2>
+                <p>Agende seu atendimento com nossos especialistas e descubra o melhor para você.</p>
+                <button>Agende Agora</button>
+            </div>
+        </div>
+
+        <div class="product-bar">
+            <div class="product-item">
+                <img src="https://via.placeholder.com/200" alt="Produto 1">
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/200" alt="Produto 2">
+            </div>
+            <div class="product-item">
+                <img src="https://via.placeholder.com/200" alt="Produto 3">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Contato -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeContact">&times;</span>
+            <div class="formulario-contato">
+                <h2>Contato</h2>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <textarea rows="4" placeholder="Mensagem"></textarea>
+                <button>Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeLogin">&times;</span>
+            <div class="formulario-login">
+                <h2>Login</h2>
+                <input type="text" placeholder="Usuário">
+                <input type="password" placeholder="Senha">
+                <button>Entrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeSignup">&times;</span>
+            <div class="formulario-cadastro">
+                <h2>Cadastro</h2>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <button>Cadastrar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funções para abrir e fechar os modais
+        document.getElementById('contactLink').onclick = function() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+
+        document.getElementById('loginLink').onclick = function() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        document.getElementById('signupLink').onclick = function() {
+            document.getElementById('signupModal').style.display = 'block';
+        }
+
+        document.getElementById('closeContact').onclick = function() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        document.getElementById('closeLogin').onclick = function() {
+            document.getElementById('loginModal').style.display = 'none';
+        }
+
+        document.getElementById('closeSignup').onclick = function() {
+            document.getElementById('signupModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target === document.getElementById('contactModal')) {
+                document.getElementById('contactModal').style.display = 'none';
+            } else if (event.target === document.getElementById('loginModal')) {
+                document.getElementById('loginModal').style.display = 'none';
+            } else if (event.target === document.getElementById('signupModal')) {
+                document.getElementById('signupModal').style.display = 'none';
+            }
+        }
+    </script>
 
     <!-- Contact Modal -->
     <div id="contactModal" class="modal">
