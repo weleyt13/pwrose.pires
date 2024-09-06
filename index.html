@@ -12,7 +12,7 @@
         }
 
         header {
-            background-image: url('https://weleyt13.github.io/pwrose.pires/noisy-gradients.png'); /* Uso do gradiente fornecido */
+            background-image: url('https://weleyt13.github.io/pwrose.pires/noisy-gradients.png');
             background-size: cover;
             background-repeat: no-repeat;
             padding: 10px 0;
@@ -72,64 +72,107 @@
         }
 
         .auth-buttons .login {
-            background: linear-gradient(to right, #6a11cb, #2575fc); /* Degradê do botão Login */
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: #fff;
         }
 
         .auth-buttons .login:hover {
-            background: linear-gradient(to right, #5b0ea3, #1e63d9); /* Efeito hover para o botão Login */
+            background: linear-gradient(to right, #5b0ea3, #1e63d9);
         }
 
         .auth-buttons .signup {
-            background: linear-gradient(to right, #ff758c, #ff7eb3); /* Degradê do botão Cadastrar */
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
             color: #fff;
         }
 
         .auth-buttons .signup:hover {
-            background: linear-gradient(to right, #e6687e, #e6729f); /* Efeito hover para o botão Cadastrar */
+            background: linear-gradient(to right, #e6687e, #e6729f);
         }
 
         .hero {
-            background-image: url('https://weleyt13.github.io/pwrose.pires/lera-kogan-hBjll5c6-9o-unsplash%201.png'); /* Substitua pela URL real da imagem */
+            background-image: url('https://weleyt13.github.io/pwrose.pires/lera-kogan-hBjll5c6-9o-unsplash%201.png');
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            text-align: center;
         }
 
         .hero-content h1 {
             color: #fff;
             font-size: 36px;
-            text-align: center;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
             font-family: 'Georgia', serif;
             margin: 0;
+        }
+
+        .info-bar, .product-bar {
+            width: 80%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 10px;
+            z-index: 2;
+        }
+
+        .info-image, .info-text, .product-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .info-image img, .product-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .info-text h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .info-text p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .info-text button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
         }
 
         /* Modal Styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1;
+            z-index: 3;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-            padding-top: 60px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
 
         .modal-content {
             background-color: #fefefe;
-            margin: 5% auto;
+            margin: 10% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
-            max-width: 400px;
-            border-radius: 8px;
+            max-width: 500px;
+            border-radius: 10px;
         }
 
         .close {
@@ -139,19 +182,10 @@
             font-weight: bold;
         }
 
-        .close:hover {
+        .close:hover, .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
-        }
-
-        .formulario-contato, .formulario-login, .formulario-cadastro {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: 0 auto;
         }
 
         .formulario-contato input,
@@ -210,117 +244,6 @@
         <div class="hero-content">
             <h1>CONECTE-SE COM SUA ESTÉTICA</h1>
         </div>
-    </section>
-    <!DOCTYPE html>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barra Centralizada</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body, html {
-            height: 100%;
-            font-family: Arial, sans-serif;
-        }
-
-        .hero {
-            position: relative;
-            height: 100vh;
-            background-image: url('https://via.placeholder.com/1200x800');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-
-        .info-bar, .product-bar {
-            width: 80%;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-radius: 10px;
-            z-index: 2;
-        }
-
-        .info-image, .info-text, .product-item {
-            flex: 1;
-            text-align: center;
-        }
-
-        .info-image img, .product-item img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .info-text h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .info-text p {
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .info-text button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 3;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover, .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <div class="hero">
         <div class="info-bar">
             <div class="info-image">
                 <img src="https://via.placeholder.com/400" alt="Imagem Informativa">
@@ -343,7 +266,7 @@
                 <img src="https://via.placeholder.com/200" alt="Produto 3">
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Modal de Contato -->
     <div id="contactModal" class="modal">
@@ -377,8 +300,8 @@
         <div class="modal-content">
             <span class="close" id="closeSignup">&times;</span>
             <div class="formulario-cadastro">
-                <h2>Cadastro</h2>
-                <input type="text" placeholder="Nome">
+                <h2>Cadastre-se</h2>
+                <input type="text" placeholder="Nome Completo">
                 <input type="email" placeholder="Email">
                 <input type="password" placeholder="Senha">
                 <button>Cadastrar</button>
@@ -387,139 +310,35 @@
     </div>
 
     <script>
-        // Funções para abrir e fechar os modais
         document.getElementById('contactLink').onclick = function() {
             document.getElementById('contactModal').style.display = 'block';
-        }
+        };
 
         document.getElementById('loginLink').onclick = function() {
             document.getElementById('loginModal').style.display = 'block';
-        }
+        };
 
         document.getElementById('signupLink').onclick = function() {
             document.getElementById('signupModal').style.display = 'block';
-        }
+        };
 
         document.getElementById('closeContact').onclick = function() {
             document.getElementById('contactModal').style.display = 'none';
-        }
+        };
 
         document.getElementById('closeLogin').onclick = function() {
             document.getElementById('loginModal').style.display = 'none';
-        }
+        };
 
         document.getElementById('closeSignup').onclick = function() {
             document.getElementById('signupModal').style.display = 'none';
-        }
+        };
 
         window.onclick = function(event) {
-            if (event.target === document.getElementById('contactModal')) {
-                document.getElementById('contactModal').style.display = 'none';
-            } else if (event.target === document.getElementById('loginModal')) {
-                document.getElementById('loginModal').style.display = 'none';
-            } else if (event.target === document.getElementById('signupModal')) {
-                document.getElementById('signupModal').style.display = 'none';
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
             }
-        }
-    </script>
-
-    <!-- Contact Modal -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="contactClose">&times;</span>
-            <h2>Contato</h2>
-            <div class="formulario-contato">
-                <form action="mailto:contato@beautylink.com.br" method="post" enctype="text/plain">
-                    <input type="text" name="nome" placeholder="Nome" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="cidade" name="cidade" placeholder="Cidade" required>
-                    <textarea name="mensagem" placeholder="Mensagem" rows="4" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Login Modal -->
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="loginClose">&times;</span>
-            <h2>Login</h2>
-            <div class="formulario-login">
-                <form action="#" method="post">
-                    <input type="text" name="username" placeholder="Usuário" required>
-                    <input type="password" name="password" placeholder="Senha" required>
-                    <button type="submit">Entrar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Signup Modal -->
-    <div id="signupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="signupClose">&times;</span>
-            <h2>Cadastrar</h2>
-            <div class="formulario-cadastro">
-                <form action="#" method="post">
-                    <input type="text" name="nome" placeholder="Nome Completo" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="password" name="senha" placeholder="Senha" required>
-                    <button type="submit">Cadastrar</button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Modals
-        var contactModal = document.getElementById("contactModal");
-        var loginModal = document.getElementById("loginModal");
-        var signupModal = document.getElementById("signupModal");
-
-        var contactLink = document.getElementById("contactLink");
-        var loginLink = document.getElementById("loginLink");
-        var signupLink = document.getElementById("signupLink");
-
-        var contactClose = document.getElementById("contactClose");
-        var loginClose = document.getElementById("loginClose");
-        var signupClose = document.getElementById("signupClose");
-
-        contactLink.onclick = function() {
-            contactModal.style.display = "block";
-        }
-
-        loginLink.onclick = function() {
-            loginModal.style.display = "block";
-        }
-
-        signupLink.onclick = function() {
-            signupModal.style.display = "block";
-        }
-
-        contactClose.onclick = function() {
-            contactModal.style.display = "none";
-        }
-
-        loginClose.onclick = function() {
-            loginModal.style.display = "none";
-        }
-
-        signupClose.onclick = function() {
-            signupModal.style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == contactModal) {
-                contactModal.style.display = "none";
-            }
-            if (event.target == loginModal) {
-                loginModal.style.display = "none";
-            }
-            if (event.target == signupModal) {
-                signupModal.style.display = "none";
-            }
-        }
+        };
     </script>
 </body>
 </html>
